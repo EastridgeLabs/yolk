@@ -164,7 +164,7 @@ class CheeseShop(object):
         Returns PyPI's XML-RPC server instance
         """
         check_proxy_setting()
-        if os.environ.has_key('XMLRPC_DEBUG'):
+        if 'XMLRPC_DEBUG' in os.environ:
             debug = 1
         else:
             debug = 0
@@ -275,7 +275,7 @@ class CheeseShop(object):
 
             #Try the package's metadata directly in case there's nothing
             #returned by XML-RPC's release_urls()
-            if metadata and metadata.has_key('download_url') and \
+            if metadata and 'download_url' in metadata and \
                         metadata['download_url'] != "UNKNOWN" and \
                         metadata['download_url'] != None:
                 if metadata['download_url'] not in all_urls:
