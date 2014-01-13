@@ -24,7 +24,7 @@ if platform.python_version().startswith('2'):
     import urllib2
 else:
     import xmlrpc.client as xmlrpclib
-    import pickle
+    import pickle as cPickle
     import urllib.request as urllib2
 import os
 import time
